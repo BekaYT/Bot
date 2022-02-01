@@ -1,9 +1,10 @@
 import discord
 import asyncio
+import os
 
 client = discord.Client()
 
-token = "OTM3NTgxODkwODYzNTEzNjIx.Yfd1Lg.2Oggp-W4aIzPN_xLtypJ1FtkXVM"
+token = os.environ["TOKEN"]
 
 @client.event
 async def on_ready():
@@ -49,5 +50,4 @@ async def on_message(message):
         embed.set_footer(text="Bot Made By Hikapu (aka Kenote) ")
         await message.channel.send(embed=embed)
         
-
 client.run(token)
