@@ -1,3 +1,4 @@
+from optparse import Option
 import discord
 import asyncio
 import random
@@ -5,7 +6,7 @@ import youtube_dl
 import os
 
 client = discord.Client()
-intents=discord.Intents().all()
+intents = discord.Intents().all()
 
 token = os.environ['TOKEN']
 
@@ -81,6 +82,26 @@ async def on_message(message):
     if query == "출첵":
         await message.channel.send(f'{message.author.mention}님 2022-02-04일 출석체크 완료되었습니다')
     
+    if query == "VC입장":
+        await message.author.voice.channel.connect()
+        await message.channel.send("약2초후 보이스채널에 입장합니다.")
 
+    if query == "VC퇴장":
+        for vc in client.voice_clients:
+            if vc.guild == message.guild:
+                voice = vc
+
+        await voice.disconnect()
+        await message.channel.send("약2초후 보이스채널에 퇴장합니다.")
+    
+    #if query.startswith('VC노래재생'):
+         #for vc in client.voice_clients:
+             #if vc.guild == message.guild:
+                 #voice = vc
+
+        #url = query.replace('VC노래재생')
+        #option = {
+           # 'outtmpl'_: "file/"+ url.split('=')[1] + ".mp3"
+        #}
         
 client.run(token)
