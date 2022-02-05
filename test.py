@@ -1,4 +1,3 @@
-from optparse import Option
 import discord
 import asyncio
 import random
@@ -6,6 +5,7 @@ import youtube_dl
 import os
 
 client = discord.Client()
+
 intents = discord.Intents().all()
 
 token = os.environ['TOKEN']
@@ -77,6 +77,7 @@ async def on_message(message):
     if query == "최신업데이트":
         embed = discord.Embed(title="최신업데이트 목록", color=0x18dccf)
         embed.add_field(name="'케엔아 랜덤음악NCS' 추가", value="케엔아 랜덤음악NCS 명령어를 쓰게되면 NCS노래중에 랜덤으로 나옵니다.\n2022-02-04 AM 11:42",inline=False)
+        embed.add_field(name="'케엔아 출첵' 추가", value="출석체크가 됩니다.\n2022-02-04 PM 8:31",inline=False)
         embed.set_footer(text="Bot Made By Hikapu (aka Kenote) ")
         await message.channel.send(embed=embed)
     if query == "출첵":
