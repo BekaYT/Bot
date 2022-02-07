@@ -83,7 +83,7 @@ async def on_message(message):
         await message.channel.send(embed=embed)
     
     if query == "출첵":
-        await message.channel.send(f'{message.author.mention}님 2022-02-06일 출석체크 완료되었습니다')
+        await message.channel.send(f'{message.author.mention}님 2022-02-07일 출석체크 완료되었습니다')
     
     
     if query == "VC입장":
