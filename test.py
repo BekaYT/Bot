@@ -71,9 +71,6 @@ async def on_message(message):
         embed.add_field(name=f"Music : {music['name']}", value=music['link'])
         embed.set_footer(text="⏏️ 위 링크 클릭시 노래재생 ⏏️\nBot Made By Hikapu (aka Kenote)")
         await message.channel.send(embed=embed)
-
-        if query == "랜덤음악NCS":
-            await message.channel.send("죄송합니다 ㅠㅠ 현재는 케엔봇이 업데이트중입니다 ㅠㅠ\n사유 : Railway 호스팅이 서버점검중...약 30분예상")
     
     if query == "최신업데이트":
         embed = discord.Embed(title="최신업데이트 목록", color=0x18dccf)
@@ -83,7 +80,7 @@ async def on_message(message):
         await message.channel.send(embed=embed)
     
     if query == "출첵":
-        await message.channel.send(f'{message.author.mention}님 2022-02-07일 출석체크 완료되었습니다')
+        await message.channel.send(f'{message.author.mention}님 2022-02-13일 출석체크 완료되었습니다')
     
     
     if query == "VC입장":
